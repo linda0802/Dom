@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar DOM</title>
+</head>
+<body>
+
+    <h1 id="judul">Belajar-dom</h1>
+
+    <h1 id="dunia">Halo dunia!</h1>
+
+    <button onclick="ubah()">klik disini</button>
+
+    <input type="color" id="inputWarna">
+
+    <script>
+        // --- Modifikasi Saat Halaman Dimuat (Initial DOM Manipulation) ---
+        // Mengubah teks dan warna H1 dengan ID "judul" saat halaman pertama kali dimuat
+        document.getElementById("judul").innerHTML = "Hallo, everyone!";
+        document.getElementById("judul").style.color = "blue";
+        document.getElementById("judul").style.backgroundColor ="pink"
+
+        function ubah() {
+
+            const colors = ["red", "green", "blue", "orange", "purple", "brown", "pink"];
+  
+            const randomIndex = Math.floor(Math.random() * colors.length);
+
+            const randomColor = colors[randomIndex];
+
+            const selectedColor = document.getElementById("inputWarna").value;
+
+
+            document.getElementById("dunia").innerText = "Ini Teksnya berubah";
+
+            document.getElementById("dunia").style.color = randomColor; 
+
+            document.getElementById("dunia").style.backgroundColor = selectedColor;
+
+            document.getElementById("judul").style.color = "skyblue";
+        }
+    </script>
+
+</body>
+</html>
